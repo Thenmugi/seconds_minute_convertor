@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.config.js">
+    <title>Seconds to minutes convertor</title>
+
+</head>
+<body class=" h-screen flex justify-center items-center" style="background-color: #DFD3C3;">
+    <div class="main w-1/2 h-2/3  flex flex-col items-center rounded-xl " style="background: #8D493A;">
+        
+        <h1 class="font-black text-2xl mt-10 md:text-3xl" style="color:#D0B8A8">Celcius to Fahreheit convertor</h1>
+        <input type="text" id="seconds" placeholder="Enter the seconds" class="bg-white-300 h-10 w-3/5 mt-20" >
+        <button class="border p-3 w-2/5 rounded-xl mt-6" type="submit" onclick="convert()" style="color:#D0B8A8">Seconds to minutes</button>
+        <div id="result" class="text-white font-medium text-xl">
+
+        </div>
+    </div>
+    <script>
+        function convert(){
+            const a=Number(document.getElementById("seconds").value);
+            const min = a/60;
+            const result = document.getElementById("result");
+            if (min>=0 && min<2){
+                result.innerHTML = min.toFixed(1)+ " minute"
+            }
+            else{
+                result.innerHTML = min.toFixed(1) + " minutes"
+            }
+        }
+    </script>
+</body>
+</html>
